@@ -1,0 +1,154 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1d23;
+  color: #fff;
+}
+
+.crypto-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(43, 49, 57, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+.price-container {
+  background: #2b3139;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border: 1px solid #3a424d;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #f0b90b;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  background: linear-gradient(45deg, #f0b90b, #f8d12f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.token-selector {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.token-selector select {
+  margin-left: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  background-color: #2b3139;
+  color: #fff;
+  border: 1px solid #4CAF50;
+  cursor: pointer;
+}
+
+.token-selector select:focus {
+  outline: none;
+  border-color: #45a049;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.crypto-price {
+  margin: 2rem 0;
+}
+
+.button-container {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:disabled {
+  background: #2b3139;
+  color: #848e9c;
+  cursor: not-allowed;
+}
+
+.stop-button {
+  background: linear-gradient(45deg, #f44336, #da190b);
+}
+
+.stop-button:hover {
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.2);
+}
+
+.error-message {
+  color: #ff6b6b;
+  background: #2b1a1a;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+  border: 1px solid #ff3b3b;
+}
+
+.error {
+  color: #f44336;
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid #f44336;
+  border-radius: 4px;
+}
+
+.loading-text {
+  color: #848e9c;
+  font-style: italic;
+}
+
+/* Efecto de precio cambiante */
+@keyframes price-update {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.price-update {
+  animation: price-update 0.5s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .crypto-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .button-container {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
